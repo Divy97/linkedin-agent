@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Supabase + Tailwind CSS + shadcn/ui
 
-## Getting Started
+A modern full-stack starter template built with:
 
-First, run the development server:
+- **[Next.js 15](https://nextjs.org)** - React framework with App Router
+- **[Supabase](https://supabase.com)** - Database and authentication
+- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
+- **[shadcn/ui](https://ui.shadcn.com)** - Beautiful and accessible UI components
+- **[Bun](https://bun.sh)** - Fast JavaScript runtime and package manager
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh) installed on your machine
+- A [Supabase](https://supabase.com) account (optional for initial setup)
+
+### Installation
+
+1. **Install dependencies:**
+   ```bash
+   bun install
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   Update `.env.local` with your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url-here
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+   SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key-here
+   ```
+
+3. **Run the development server:**
+   ```bash
+   bun dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📦 What's Included
+
+### Technology Stack
+- **Next.js 15** with App Router and TypeScript
+- **Supabase** client configuration (both client and server-side)
+- **Tailwind CSS** for styling with dark mode support
+- **shadcn/ui** components (Button, Card, Input)
+- **ESLint** for code linting
+
+### Features
+- 🎨 Beautiful gradient background with responsive design
+- 🌙 Dark mode support
+- 🧩 Pre-configured shadcn/ui components
+- 🔗 Supabase connection testing
+- 📱 Fully responsive layout
+- 🛠️ TypeScript support
+
+## 🎨 Adding More UI Components
+
+This project uses shadcn/ui for components. Add new components with:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Add individual components
+bunx shadcn@latest add dialog
+bunx shadcn@latest add form
+bunx shadcn@latest add table
+
+# Add multiple components at once
+bunx shadcn@latest add dialog form table
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🗄️ Database Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Create a new Supabase project** at [supabase.com](https://supabase.com)
+2. **Copy your project credentials** from Settings > API
+3. **Update your `.env.local`** file with the credentials
+4. **Create your database schema** using the Supabase dashboard or SQL editor
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Deployment
 
-## Learn More
+### Deploy on Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Add your environment variables in Vercel's dashboard
+4. Deploy!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environment Variables for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Make sure to add these environment variables in your deployment platform:
 
-## Deploy on Vercel
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                # Next.js app directory
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── components/
+│   └── ui/            # shadcn/ui components
+│       ├── button.tsx
+│       ├── card.tsx
+│       └── input.tsx
+└── lib/
+    ├── supabase.ts        # Supabase client config
+    ├── supabase-server.ts # Server-side Supabase client
+    └── utils.ts           # Utility functions
+```
+
+## 🛠️ Scripts
+
+```bash
+# Development
+bun dev          # Start development server
+bun build        # Build for production
+bun start        # Start production server
+bun lint         # Run ESLint
+
+# Add shadcn/ui components
+bunx shadcn@latest add [component-name]
+```
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Bun Documentation](https://bun.sh/docs)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
